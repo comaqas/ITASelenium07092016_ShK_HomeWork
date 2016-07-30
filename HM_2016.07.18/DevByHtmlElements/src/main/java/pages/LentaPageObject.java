@@ -28,7 +28,9 @@ public class LentaPageObject  {
         return true;
     }
 
+    public  void lentaLinkClick(){navigateBlock.lentaLinkClick();}
 
+    public void companiesLinkClick(){navigateBlock.companiesLinkClick();}
 
 
 

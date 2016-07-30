@@ -1,42 +1,50 @@
 package blocks;
 
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.htmlelements.annotations.Block;
 import ru.yandex.qatools.htmlelements.annotations.Name;
 import ru.yandex.qatools.htmlelements.element.HtmlElement;
+import ru.yandex.qatools.htmlelements.element.Link;
 
 /**
  * Created by user on 27.07.2016.
  */
 
 @Name("DevByNavigateBlock")
-@Block(@FindBy(css=".dev-container.header-nav"))
-public class NavigateBlock  extends HtmlElement{
+@Block(@FindBy(css = ".dev-container.header-nav"))
+public class NavigateBlock extends HtmlElement {
 
+
+    @Name("LentaLink")
     @FindBy(css = "a[href=\"https://dev.by/lenta\"]")
-    WebElement lentaLink;
+    private Link lentaLink;
+
+    @Name("CompaniesLink")
     @FindBy(css = "a[href=\"https://companies.dev.by/\"]")
-    WebElement companiesLink;
+    private Link companiesLink;
+
+    @Name("VacanciesLink")
     @FindBy(css = "a[href=\"https://jobs.dev.by/\"]")
-    WebElement vacanciesLink;
+    private Link vacanciesLink;
+
+    @Name("Salaries Link")
     @FindBy(css = "a[href=\"https://salaries.dev.by/\"]")
-    WebElement salariesLink;
+    private Link salariesLink;
 
 
-    public void lentaLinkClick(){
+    public void lentaLinkClick() {
         lentaLink.click();
     }
 
-    public void companiesLinkClick(){
+    public void companiesLinkClick() {
         companiesLink.click();
     }
 
-    public void vacanciesLinkClick(){
+    public void vacanciesLinkClick() {
         vacanciesLink.click();
     }
 
-    public void salariesLinkClick(){
+    public void salariesLinkClick() {
         salariesLink.click();
     }
 

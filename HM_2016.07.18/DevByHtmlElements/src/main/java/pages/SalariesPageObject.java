@@ -31,6 +31,6 @@ public class SalariesPageObject {
         return true;
     }
 
-
+    public void vacanciesLinkClick(){navigateBlock.vacanciesLinkClick();}
 
 }

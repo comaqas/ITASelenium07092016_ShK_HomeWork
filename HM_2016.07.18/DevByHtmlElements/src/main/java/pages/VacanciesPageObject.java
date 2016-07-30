@@ -18,10 +18,10 @@ public class VacanciesPageObject {
 
         HtmlElementLoader.populatePageObject(this,driver);
     }
-    private  final By SEARCH_VACNCIES_TEXT =  By.cssSelector(".column-left>h3");
+    private  final By SEARCH_VACANCIES_TEXT =  By.cssSelector(".column-left>h3");
 
                public  boolean isSearchVacanciesTextDisplyed(WebDriver driver){
-               WebElement searchVacanciesText = driver.findElement(SEARCH_VACNCIES_TEXT);
+               WebElement searchVacanciesText = driver.findElement(SEARCH_VACANCIES_TEXT);
 
                      if(!searchVacanciesText.getText().equals("Поиск вакансий:")){
                       return false;

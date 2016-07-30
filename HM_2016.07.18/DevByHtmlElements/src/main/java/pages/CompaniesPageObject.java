@@ -12,7 +12,7 @@ import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
  */
 public class CompaniesPageObject {
 
-    private NavigateBlock navigateBlock;
+ private NavigateBlock navigateBlock;
     private final By ISSOFT = By.cssSelector("#tablesort [href=\"/issoft\"]");
 
     public CompaniesPageObject(WebDriver driver){
@@ -25,6 +25,10 @@ public class CompaniesPageObject {
             return false;
         }
         return  true;
+    }
+
+    public void salariesLinkClick(){
+        navigateBlock.salariesLinkClick();
     }
 
 
