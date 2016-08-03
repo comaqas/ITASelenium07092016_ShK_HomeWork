@@ -2,9 +2,7 @@ package tests;
 
 import blocks.NavigateBlock;
 import core.TestBase;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import helpers.HelperClass;
 import org.testng.annotations.Test;
 import pages.CompaniesPageObject;
 import pages.LentaPageObject;
@@ -12,7 +10,6 @@ import pages.SalariesPageObject;
 import pages.VacanciesPageObject;
 import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
 
-import java.io.File;
 import java.io.IOException;
 
 import static org.testng.Assert.assertTrue;
@@ -32,6 +29,10 @@ public class DevByTest extends TestBase {
     private final SalariesPageObject salariesPageObject = new SalariesPageObject(driver);
     private final VacanciesPageObject vacanciesPageObject = new VacanciesPageObject(driver);
 
+    private  String lentaScreen="lentaScreen";
+    private  String companiesScreen="companiesScreen";
+    private  String salariesScreen="salariesScreen";
+    private  String vacanciesScreen="vacanciesScreen";
 
     @Test
     public void devBYHtmlTest() throws IOException {
@@ -39,26 +40,22 @@ public class DevByTest extends TestBase {
 
         navigateBlock.lentaLinkClick();
         assertTrue(lentaPageObject.isLogoDisplayed(driver));
-        File lentaScreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(lentaScreen,new File("D:\\ATsilenium\\DevByHtmlElements\\src\\main\\resources\\scrennshoots\\lentaScreen.png"));
-
+        HelperClass.takeScreenShoot(driver,lentaScreen);
 
         navigateBlock.companiesLinkClick();
         assertTrue(companiesPageObject.isIsSoft(driver));
-        File companiesScreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(companiesScreen,new File("D:\\ATsilenium\\DevByHtmlElements\\src\\main\\resources\\scrennshoots\\companiesScreen.png"));
+        HelperClass.takeScreenShoot(driver,companiesScreen);
 
 
         navigateBlock.salariesLinkClick();
         assertTrue(salariesPageObject.isItSalaryTextDislpayed(driver));
-        File salariesScreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(salariesScreen,new File("D:\\ATsilenium\\DevByHtmlElements\\src\\main\\resources\\scrennshoots\\salariesScreen.png"));
+        HelperClass.takeScreenShoot(driver,salariesScreen);
 
 
 
         navigateBlock.vacanciesLinkClick();
         assertTrue(vacanciesPageObject.isSearchVacanciesTextDisplyed(driver));
-        File vacanciesScreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(vacanciesScreen,new File("D:\\ATsilenium\\DevByHtmlElements\\src\\main\\resources\\scrennshoots\\vacanciesScreen.png"));
+        HelperClass.takeScreenShoot(driver,vacanciesScreen);
+        ;
     }
 }
