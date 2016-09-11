@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1473523152074" stop="1473523170133" version="1.4.16" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Default Suite : AutomationpracticeFinalTask</name>
+    <title>Default Suite : AutomationpracticeFinalTask</title>
+    <test-cases>
+        <test-case start="1473523165267" stop="1473523169988" status="passed">
+            <name>contactUsFillTest</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="asus"/>
+                <label name="thread" value="73248@asus.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>
