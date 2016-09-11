@@ -4,6 +4,8 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import java.io.IOException;
+
 
 public class Listener implements ITestListener {
 
@@ -17,8 +19,11 @@ public class Listener implements ITestListener {
     }
 
     public void onTestFailure(ITestResult iTestResult) {
-
-        Utils.makeScreenshot("Failure screenshot");
+        try {
+            Utils.screenshot("FailureTestScrenshot");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void onTestSkipped(ITestResult iTestResult) {
